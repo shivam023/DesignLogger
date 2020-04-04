@@ -49,7 +49,7 @@ public class LoggerServiceImpl implements LoggerService {
     public void sendNotification(MessageType event) {
         List<Consumer> subscriberList = registryMap.get(event);
         for(Consumer sub : subscriberList) {
-            sub.update(val);
+            sub.update(val, event);
         }
     }
 }
